@@ -1,0 +1,23 @@
+body {
+  font-family: Helvetica;
+}
+
+// #root {
+//   height: 100vh;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+
+.participant-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.participant {
+  flex: 50% 0 0;
+  cursor: pointer;
+  border: 1px solid black;
+}
+
+@import "card";
