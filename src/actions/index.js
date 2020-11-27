@@ -5,7 +5,7 @@ export const SET_NAV_SECONDARY = "SET_NAV_SECONDARY";
 export function setParticipants() {
   // switch this url to local route once in rails
   return fetch(
-    "https://raw.githubusercontent.com/bmchavez/bmchavez-DD-ReactOnly/main/participants.json"
+    "https://raw.githubusercontent.com/bmchavez/EHI-Lab--Denizen-Designer-Website/main/EHI-Lab_Denizen-Designer-Website/app/javascript/denizenDesigner/data/participants.json"
   )
     .then((response) => response.json())
     .then((data) => {
