@@ -1,6 +1,7 @@
 import participants from "../participants";
 export const SET_PARTICIPANTS = "SET_PARTICIPANTS";
 export const SET_NAV_SECONDARY = "SET_NAV_SECONDARY";
+export const DENIZEN_TAB_SELECTED = "DENIZEN_TAB_SELECTED";
 
 export function setParticipants() {
   // switch this url to local route once in rails
@@ -20,5 +21,12 @@ export function setNavSecondary() {
   return {
     type: SET_NAV_SECONDARY,
     payload: "???",
+  };
+}
+
+export function selectDenizenTab(denizenTab) {
+  return {
+    type: DENIZEN_TAB_SELECTED,
+    payload: denizenTab,
   };
 }

@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { setParticipants } from "../actions";
+import { setParticipants } from "../../actions";
 
-import Participant from "../components/participant";
+import Participant from "../../components/participant";
 
 class ParticipantList extends Component {
   // static defaultProps = {
