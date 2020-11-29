@@ -6,6 +6,11 @@ import { bindActionCreators } from "redux";
 import { fetchParticipant } from "../../actions";
 
 export class ParticipantsShow extends Component {
+  componentWillMount() {
+    if (!this.props.participant) {
+      this.props.fetchParticipant(this.props.match.params.id);
+    }
+  }
   render() {
     if (!this.props.participant) {
       return <p>Loading...</p>;
@@ -13,10 +18,18 @@ export class ParticipantsShow extends Component {
     return (
       <div>
         <Link to='/denizendesigner/interviews'>Back</Link>
-        <div className=''>
-          <h1>{this.props.participant.first_name}</h1>
-          <h1>{this.props.participant.last_name}</h1>
-          <p>Participant Details!</p>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-sm-3'>Interviewee Picture*</div>
+            <div className='col-sm-9'>
+              <h2>
+                {this.props.participant.first_name}{" "}
+                {this.props.participant.last_name}
+              </h2>
+              <p>{this.props.participant.designer_type}</p>
+              <p>{this.props.participant.bio}</p>
+            </div>
+          </div>
         </div>
       </div>
     );
@@ -29,4 +42,11 @@ function mapReduxStateToProps(reduxState, ownProps) {
   return { participant };
 }
 
-export default connect(mapReduxStateToProps)(ParticipantsShow);
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators({ fetchParticipant }, dispatch);
+}
+
+export default connect(
+  mapReduxStateToProps,
+  mapDispatchToProps
+)(ParticipantsShow);

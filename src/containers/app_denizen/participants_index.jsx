@@ -17,8 +17,11 @@ class ParticipantsIndex extends Component {
           to={`/denizendesigner/interviews/${participant.id}`}
           key={participant.id}
         >
-          <div className='participant-item'>
-            <h3>{participant.first_name}</h3>
+          <div className='card participant-item'>
+            <p>
+              {participant.first_name} {participant.last_name}
+            </p>
+            <p>{participant.designer_type}</p>
           </div>
         </Link>
       );
@@ -28,7 +31,7 @@ class ParticipantsIndex extends Component {
   render() {
     return (
       <div>
-        <div className='first-row'></div>
+        <div className='participant-list'></div>
         {this.renderParticipants()}
       </div>
     );

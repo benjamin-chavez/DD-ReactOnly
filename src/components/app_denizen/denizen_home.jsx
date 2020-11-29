@@ -25,10 +25,6 @@ class DenizenHome extends Component {
             <Link to='/denizendesigner/interviews'>
               Meet The Denizen Designers
             </Link>
-            <br />
-            <Link to='/denizendesigner/participantsindex'>
-              Meet The Denizen Designers2
-            </Link>
           </p>
         </div>
       </div>

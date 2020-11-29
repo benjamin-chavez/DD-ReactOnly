@@ -1,4 +1,8 @@
-import { SET_PARTICIPANTS, FETCH_PARTICIPANTS } from "../actions";
+import {
+  SET_PARTICIPANTS,
+  FETCH_PARTICIPANTS,
+  FETCH_PARTICIPANT,
+} from "../actions";
 
 const participantsReducer = (state, action) => {
   // Compute and returen the new state
@@ -12,6 +16,9 @@ const participantsReducer = (state, action) => {
       return action.payload;
     case FETCH_PARTICIPANTS:
       return action.payload;
+    case FETCH_PARTICIPANT:
+      return action.payload;
+    // return [ action.payload ];
     default:
       return state;
   }
