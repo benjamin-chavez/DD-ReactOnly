@@ -23,5 +23,30 @@ body {
   margin: 10px;
 }
 
+.img-container {
+  box-shadow: 0px 13px 28px rgba(0, 39, 92, 0.08);
+  border-radius: 6px;
+  // position: absolute;
+  width: 303.06px;
+  height: 260px;
+  // left: 0px;
+  // top: 0px;
+  background: linear-gradient(
+      180deg,
+      rgba(196, 196, 196, 0) 0%,
+      rgba(20, 54, 92, 0.56) 100%
+    ),
+    url("https://s3-alpha-sig.figma.com/img/f5af/d022/a6172e4a22f5b284a8898f11c5877e62?Expires=1607299200&Signature=Giwm96H7PTzF7iEhkVnl8IFyxeTVzKPuY63-MqLAOq65pPtO13kcn7oIc9H4bTZnDC8tibuqcs2Q4bxRM~nAjKjuEwhpTvSvvG-c07EVJ3YfxfHGGyb5xv6v4zAx65mM6JRcV1LDP7Oo3DfCcYx72cnJy-rVuaP0YKTFRm9sCtd5q89sfZOZ7IshSaxRrNXSPiqCxmYitRja7~aupiI0BH4x6Wj8t5rQsSyNoaGZNfbhuqBn3wUm6C9a6oSjF-6WQEB1ntPcOzpY5BIKHuYU5gE1RDixiTw-Tep7FekmtfuzAYEPNv9aJz1D~c-WQCxmUbswqJ8U9amOTwKLbHSRzA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"),
+    #c4c4c4;
+  border-radius: 6px;
+  // width: 303.06px;
+  // height: 260px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.participant-show-img {
+}
+
 // @import "card";
 @import "nav_secondary";

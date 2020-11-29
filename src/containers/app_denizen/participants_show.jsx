@@ -16,19 +16,27 @@ export class ParticipantsShow extends Component {
       return <p>Loading...</p>;
     }
     return (
-      <div>
-        <Link to='/denizendesigner/interviews'>Back</Link>
-        <div className='container'>
-          <div className='row'>
-            <div className='col-sm-3'>Interviewee Picture*</div>
-            <div className='col-sm-9'>
-              <h2>
-                {this.props.participant.first_name}{" "}
-                {this.props.participant.last_name}
-              </h2>
-              <p>{this.props.participant.designer_type}</p>
-              <p>{this.props.participant.bio}</p>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-sm-12'>
+            <Link to='/denizendesigner/interviews'>
+              <p>Back</p>
+            </Link>
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-sm-4'>
+            <div className='img-container'>
+              <div className='participant-show-img'></div>
             </div>
+          </div>
+          <div className='col-sm-8'>
+            <h2>
+              {this.props.participant.first_name}{" "}
+              {this.props.participant.last_name}
+            </h2>
+            <p>{this.props.participant.designer_type}</p>
+            <p>{this.props.participant.bio}</p>
           </div>
         </div>
       </div>
