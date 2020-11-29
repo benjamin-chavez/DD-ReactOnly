@@ -1,14 +1,15 @@
 import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import { selectDenizenTab, setNavSecondary } from "../../actions";
+import { selectDenizenTab, setNavSecondaryz } from "../../actions";
+import { Link } from "react-router-dom";
 
 class NavSecondary extends Component {
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.selectedDenizenTab !== this.props.selectedDenizenTab) {
-      this.props.fetchMessages(nextProps.selectedDenizenTab);
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.selectedDenizenTab !== this.props.selectedDenizenTab) {
+  //     this.props.fetchMessages(nextProps.selectedDenizenTab);
+  //   }
+  // }
 
   handleClick = (denizenTab) => {
     this.props.selectDenizenTab(denizenTab);
@@ -18,27 +19,26 @@ class NavSecondary extends Component {
     return (
       <li
         key={denizenTab}
-        // className={denizenTab === this.props.selecteddenizenTab ? 'active' : null}
         onClick={() => this.handleClick(denizenTab)}
         role='presentation'
       >
-        #{denizenTab}
+        <Link
+          to={`/denizendesigner/` + denizenTab.replace(/ /g, "").toLowerCase()}
+        >
+          {denizenTab}
+        </Link>
       </li>
     );
   };
 
   render() {
     return (
-      <div className='col-sm-12'>
-        <ul>
-          {/* <li>Home</li>
-          <li>Interviews</li>
-          <li>Report</li>
-          <li>Designer Database</li>
-          <li>Quotes</li>
-          <li>Resources</li> */}
-          {this.props.denizenTabs.map(this.renderDenizenTab)}
-        </ul>
+      <div className='col-sm-12 Nav-Secondary'>
+        <div>
+          <ul className='List-Inline'>
+            {this.props.denizenTabs.map(this.renderDenizenTab)}
+          </ul>
+        </div>
       </div>
     );
   }

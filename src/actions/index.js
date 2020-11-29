@@ -1,7 +1,7 @@
-import participants from "../participants";
 export const SET_PARTICIPANTS = "SET_PARTICIPANTS";
 export const SET_NAV_SECONDARY = "SET_NAV_SECONDARY";
 export const DENIZEN_TAB_SELECTED = "DENIZEN_TAB_SELECTED";
+export const FETCH_PARTICIPANTS = "FETCH_PARTICIPANTS";
 
 export function setParticipants() {
   // switch this url to local route once in rails
@@ -28,5 +28,15 @@ export function selectDenizenTab(denizenTab) {
   return {
     type: DENIZEN_TAB_SELECTED,
     payload: denizenTab,
+  };
+}
+
+export function fetchParticipants() {
+  const promise = fetch(
+    "https://raw.githubusercontent.com/bmchavez/EHI-Lab--Denizen-Designer-Website/main/EHI-Lab_Denizen-Designer-Website/app/javascript/denizenDesigner/data/participants.json"
+  ).then((response) => response.json());
+  return {
+    type: FETCH_PARTICIPANTS,
+    payload: promise,
   };
 }

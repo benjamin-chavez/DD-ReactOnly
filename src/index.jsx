@@ -14,7 +14,10 @@ import { createHistory as history } from "history";
 
 // Internal modules
 import AppDenizen from "./components/app_denizen";
-import DenizenHome from "./components/app_denizen/denizen_home";
+import ParticipantsIndex from "./containers/app_denizen/participants_index";
+import ParticipantsShow from "./containers/app_denizen/participants_show";
+// import DenizenHome from "./components/app_denizen/denizen_home";
+// import ParticipantsShow from "./containers/app_denizen/participants_show";
 import "../assets/stylesheets/application.scss";
 
 // Reducers
@@ -26,7 +29,14 @@ const identityReducer = (state = null) => state;
 
 const initialState = {
   participants: [],
-  denizenTabs: ["home", "interviews", "quotes"],
+  denizenTabs: [
+    "Home",
+    "Interviews",
+    "Report",
+    "Designer Database",
+    "Quotes",
+    "Resources",
+  ],
   selectedDenizenTab: "home",
 };
 
@@ -49,17 +59,31 @@ const store = createStore(reducers, initialState, middlewares);
 const root = document.getElementById("root");
 ReactDOM.render(
   <Provider store={store}>
-    <AppDenizen />
-    {/* <Router history={history}>
-      <Switch>
-        <div className='thin-container'>
-          <Switch>
-            <Route path='/denizendesigner/:denizenTab' component={AppDenizen} />
-            <Redirect from='/' to='/denizendesigner/home' />
-          </Switch>
-        </div>
-      </Switch>
-    </Router> */}
+    {/* <AppDenizen /> */}
+    <Router history={history}>
+      {/* <div className='thin-container'> */}
+      <div className=''>
+        <Switch>
+          <Route path='/denizendesigner' component={AppDenizen} />
+          <Redirect exact from='/' to='/denizendesigner/home' />
+          {/* <Route
+            exact
+            path='/denizendesigner/participantsindex'
+            component={ParticipantsIndex}
+          /> */}
+          {/* <Route
+            exact
+            path='/denizendesigner/interviews/:id'
+            component={ParticipantsShow}
+          /> */}
+          {/* <Redirect from='/' to='/participantsindex' /> */}
+          {/* <Route
+            path='/denizendesigner/interviews/:id'
+            component={ParticipantsShow}
+          /> */}
+        </Switch>
+      </div>
+    </Router>
   </Provider>,
   root
 );

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class DenizenHome extends Component {
   render() {
@@ -22,7 +22,13 @@ class DenizenHome extends Component {
           </p>
 
           <p>
-            {/* <Link to='/interviews'>Meet The Denizen Designers</Link> */}
+            <Link to='/denizendesigner/interviews'>
+              Meet The Denizen Designers
+            </Link>
+            <br />
+            <Link to='/denizendesigner/participantsindex'>
+              Meet The Denizen Designers2
+            </Link>
           </p>
         </div>
       </div>
