@@ -1,5 +1,5 @@
 const ROOT_URL =
-  "https://raw.githubusercontent.com/bmchavez/EHI-Lab--Denizen-Designer-Website/main/EHI-Lab_Denizen-Designer-Website/app/javascript/denizenDesigner/data/participants.json";
+  "https://raw.githubusercontent.com/bmchavez/EHI-Lab--Denizen-Designer-Website/main/app/javascript/participants.json";
 
 export const SET_PARTICIPANTS = "SET_PARTICIPANTS";
 export const SET_NAV_SECONDARY = "SET_NAV_SECONDARY";

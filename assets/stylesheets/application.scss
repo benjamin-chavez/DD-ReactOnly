@@ -12,15 +12,28 @@ body {
 .participant-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 10px;
+  // margin: 10px;
 }
 
 .participant-item {
   padding: 10px;
   flex: 50% 0 0;
+  color: white;
   cursor: pointer;
   border: 1px solid black;
-  margin: 10px;
+  margin: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 6px;
+  background: linear-gradient(
+      180deg,
+      rgba(196, 196, 196, 0) 0%,
+      rgba(20, 54, 92, 0.56) 100%
+    ),
+    url("https://s3-alpha-sig.figma.com/img/f5af/d022/a6172e4a22f5b284a8898f11c5877e62?Expires=1607299200&Signature=Giwm96H7PTzF7iEhkVnl8IFyxeTVzKPuY63-MqLAOq65pPtO13kcn7oIc9H4bTZnDC8tibuqcs2Q4bxRM~nAjKjuEwhpTvSvvG-c07EVJ3YfxfHGGyb5xv6v4zAx65mM6JRcV1LDP7Oo3DfCcYx72cnJy-rVuaP0YKTFRm9sCtd5q89sfZOZ7IshSaxRrNXSPiqCxmYitRja7~aupiI0BH4x6Wj8t5rQsSyNoaGZNfbhuqBn3wUm6C9a6oSjF-6WQEB1ntPcOzpY5BIKHuYU5gE1RDixiTw-Tep7FekmtfuzAYEPNv9aJz1D~c-WQCxmUbswqJ8U9amOTwKLbHSRzA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"),
+    #c4c4c4;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .img-container {

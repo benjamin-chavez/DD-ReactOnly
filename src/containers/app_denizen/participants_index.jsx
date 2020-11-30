@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import { fetchParticipants } from "../../actions";
 
@@ -31,8 +34,11 @@ class ParticipantsIndex extends Component {
   render() {
     return (
       <div>
-        <div className='participant-list'></div>
-        {this.renderParticipants()}
+        <Row>
+          <Col md='auto'>
+            <div className='participant-list'>{this.renderParticipants()}</div>
+          </Col>
+        </Row>
       </div>
     );
   }

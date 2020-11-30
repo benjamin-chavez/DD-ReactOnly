@@ -10,7 +10,11 @@ import {
   Redirect,
   Switch,
 } from "react-router-dom";
+// import { useRouterHistory } from "react-router";
 import { createHistory as history } from "history";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 // Internal modules
 import AppDenizen from "./components/app_denizen";
@@ -63,25 +67,33 @@ ReactDOM.render(
     <Router history={history}>
       {/* <div className='thin-container'> */}
       <div className=''>
-        <Switch>
-          <Route path='/denizendesigner' component={AppDenizen} />
-          <Redirect exact from='/' to='/denizendesigner/home' />
-          {/* <Route
+        <Container>
+          <Row>
+            <ul className='List-Inline'>
+              <li>History of Participatory Design</li>
+              <li>Denizen Designer</li>
+            </ul>
+          </Row>
+          <Switch>
+            <Route path='/denizendesigner' component={AppDenizen} />
+            <Redirect exact from='/' to='/denizendesigner/home' />
+            {/* <Route
             exact
             path='/denizendesigner/participantsindex'
             component={ParticipantsIndex}
           /> */}
-          {/* <Route
+            {/* <Route
             exact
             path='/denizendesigner/interviews/:id'
             component={ParticipantsShow}
           /> */}
-          {/* <Redirect from='/' to='/participantsindex' /> */}
-          {/* <Route
+            {/* <Redirect from='/' to='/participantsindex' /> */}
+            {/* <Route
             path='/denizendesigner/interviews/:id'
             component={ParticipantsShow}
           /> */}
-        </Switch>
+          </Switch>
+        </Container>
       </div>
     </Router>
   </Provider>,
